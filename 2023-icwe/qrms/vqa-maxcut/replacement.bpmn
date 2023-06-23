@@ -94,7 +94,7 @@
       <bpmndi:BPMNShape id="Event_12d83t8_di" bpmnElement="Event_12d83t8">
         <dc:Bounds x="1732" y="650" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="CircuitCuttingSubprocess_1f6t6d7_di" bpmnElement="Activity_03f6od3" isExpanded="false">
+      <bpmndi:BPMNShape id="CircuitCuttingSubprocess_1f6t6d7_di" bpmnElement="Activity_03f6od3" isExpanded="true">
         <dc:Bounds x="890" y="450" width="800" height="323" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_1wamr3y_di" bpmnElement="Event_1wamr3y">
