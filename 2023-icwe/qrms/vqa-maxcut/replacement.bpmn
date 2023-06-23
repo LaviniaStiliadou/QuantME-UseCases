@@ -63,6 +63,9 @@
       <bpmn2:sequenceFlow id="Flow_1m6lop6" sourceRef="Activity_1mr3iz2" targetRef="Activity_0nhrtqc" />
       <bpmn2:sequenceFlow id="Flow_0kctuf9" sourceRef="Activity_0nhrtqc" targetRef="Activity_03f6od3" />
       <bpmn2:sequenceFlow id="Flow_1m5mc3w" sourceRef="Activity_03f6od3" targetRef="Event_12d83t8" />
+      <bpmn2:subProcess id="Activity_0pcsqp76">
+          <bpmn2:startEvent id="StartEvent_100">
+    </bpmn2:subProcess>
     </bpmn2:subProcess>
   </bpmn2:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
@@ -70,7 +73,13 @@
       <bpmndi:BPMNShape id="Activity_0bwhck1_di" bpmnElement="Activity_0pcsqp7" isExpanded="true">
         <dc:Bounds x="510" y="430" width="1280" height="370" />
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0bwhck17_di" bpmnElement="Activity_0pcsqp76" isExpanded="false">
+        <dc:Bounds x="552" y="667" width="1280" height="370" />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="542" y="650" width="36" height="36" />
+      </bpmndi:BPMNShape>
+<bpmndi:BPMNShape id="_BPMNShape_StartEvent_200" bpmnElement="StartEvent_100">
         <dc:Bounds x="542" y="650" width="36" height="36" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="WarmStartingTask_05r5ztz_di" bpmnElement="Activity_1mr3iz2">
