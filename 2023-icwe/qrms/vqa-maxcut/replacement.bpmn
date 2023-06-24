@@ -76,7 +76,7 @@
       <bpmndi:BPMNShape id="Activity_0bwhck1_di" bpmnElement="Activity_0pcsqp7" isExpanded="true">
         <dc:Bounds x="510" y="430" width="1280" height="370" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0bwhck17_di" bpmnElement="Activity_0pcsqp76" isExpanded="true">
+      <bpmndi:BPMNShape id="Activity_0bwhck17_di" bpmnElement="Activity_0pcsqp76">
         <dc:Bounds x="552" y="667" width="1280" height="370" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
