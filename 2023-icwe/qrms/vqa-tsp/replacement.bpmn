@@ -197,7 +197,7 @@ return currentDestinations.size() &lt;= 2;</bpmn2:conditionExpression>
   </bpmn2:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
-      <bpmndi:BPMNShape id="Activity_190ewwt_di" bpmnElement="Activity_190ewwt" isExpanded="true">
+      <bpmndi:BPMNShape id="Activity_190ewwt_di" bpmnElement="Activity_190ewwt">
         <dc:Bounds x="-370" y="-140" width="1620" height="510" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_0hrfrqu_di" bpmnElement="Gateway_0hrfrqu" isMarkerVisible="true">
@@ -219,7 +219,7 @@ return currentDestinations.size() &lt;= 2;</bpmn2:conditionExpression>
       <bpmndi:BPMNShape id="Event_0a53oiw_di" bpmnElement="Event_0a53oiw">
         <dc:Bounds x="-348" y="232" width="36" height="36" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="BPMNShape_10ysq81" bpmnElement="Activity_1f4v8t2" isExpanded="true">
+      <bpmndi:BPMNShape id="BPMNShape_10ysq81" bpmnElement="Activity_1f4v8t2">
         <dc:Bounds x="-160" y="-30" width="1230" height="380" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
