@@ -56,7 +56,6 @@
           <bpmn2:conditionExpression xsi:type="bpmn2:tFormalExpression">${ execution.getVariable('converged')== null || execution.getVariable('converged') == 'false'}</bpmn2:conditionExpression>
         </bpmn2:sequenceFlow>
         <bpmn2:sequenceFlow id="Flow_0lk6f27" sourceRef="Activity_054v3u5" targetRef="Gateway_1he4u1l" />
-      <bpmn2:sequenceFlow id="Flow_09t2zw8" sourceRef="Activity_054v3u5" targetRef="Activity_0pcsqp76" />
       </quantme:circuitCuttingSubprocess>
       <bpmn2:endEvent id="Event_12d83t8">
         <bpmn2:incoming>Flow_1m5mc3w</bpmn2:incoming>
