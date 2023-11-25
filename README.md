@@ -6,13 +6,20 @@ This project contains different use cases for quantum workflows and the MODULO f
 Thereby, the MODULO framework incorporates the Quantum Modeling Extension (QuantME) and the corresponding BPMN extension [Quantum4BPMN](https://github.com/UST-QuAntiL/QuantME-Quantum4BPMN).
 Furthermore, it provides an integrated toolchain to model, transform, deploy, and execute quantum workflows comprising the following components:
 
-* [QuantME Modeling and Transformation Framework](https://github.com/UST-QuAntiL/QuantME-TransformationFramework): A graphical BPMN modeler supporting Quantum4BPMN to ease the modeling of quantum workflows by providing explicit modeling constructs for the execution of quantum circuits, as well as frequently occurring pre- and post-processing tasks. Furthermore, it enables transforming quantum workflows using Quantum4BPMN modeling constructs to native BPMN workflows to retain their portability between different workflow engines. Finally, it integrates the other components of the MODULO framework to automatically deploy required services, bind them to a workflow, and upload the executable workflow to a workflow engine.
+* [Quantum Workflow Modeler](https://github.com/PlanQK/workflow-modeler) (previously [QuantME Modeling and Transformation Framework](https://github.com/UST-QuAntiL/QuantME-TransformationFramework)): A graphical BPMN modeler supporting Quantum4BPMN to ease the modeling of quantum workflows by providing explicit modeling constructs for the execution of quantum circuits, as well as frequently occurring pre- and post-processing tasks. Furthermore, it enables transforming quantum workflows using Quantum4BPMN modeling constructs to native BPMN workflows to retain their portability between different workflow engines. Finally, it integrates the other components of the MODULO framework to automatically deploy required services, bind them to a workflow, and upload the executable workflow to a workflow engine.
 * [Camunda BPMN Engine](https://camunda.com/products/camunda-platform/bpmn-engine/): A state-of-the-art BPMN workflow engine used to execute quantum workflows after transforming them to native BPMN workflow models to avoid the need for extending the workflow engine.
 * [Winery](https://github.com/OpenTOSCA/winery): Winery is a web-based environment to graphically model TOSCA-based deployment models, which can then be attached to activities of quantum workflows to enable their automated deployment in the target environment.
 * [OpenTOSCA Container](https://github.com/OpenTOSCA/container): A TOSCA-compliant deployment system to deploy and manage applications or services.
 * [Qiskit Runtime Handler](https://github.com/UST-QuAntiL/qiskit-runtime-handler): A service generating Qiskit Runtime programs for hybrid loops based on corresponding workflow fragments detected by the QuantME Modeling and Transformation Framework.
 * [AWS Braket Hybrid Jobs Handler](https://github.com/UST-QuAntiL/amazon-braket-hybrid-jobs-handler): A service generating AWS Braket Hybrid Jobs programs for hybrid loops based on corresponding workflow fragments detected by the QuantME Modeling and Transformation Framework.
 * [Script Splitter](https://github.com/UST-QuAntiL/qscript-splitter): A service analyzing Python scripts to detect quantum and classical parts, which are then orchestrated by a generated workflow model.
+
+### CCIS 2023 - Prototype
+
+In this paper, we extend our [CLOSER 2023 paper](https://www.iaas.uni-stuttgart.de/publications/Beisel2023_QuantME4VQA.pdf), defining a metamodel for quantum workflows and formalizing the transformation of QuantME modeling constructs to native modeling constructs.
+The metamodel is used to introduce quantum-specific workflow modeling constructs that facilitate the modeling of Variational Quantum Algorithms (VQAs) as quantum workflows.
+To demonstrate the functionality of our modeling extension, we implemented a case study solving the Maximum Cut (MaxCut) problem using the Quantum Approximate Optimization Algorithm (QAOA).
+The corresponding workflow models and instructions on how to set up the environment and execute the application can be found [here](2023-ccis).
 
 ### ICWE 2023 - Tutorial
 
@@ -93,6 +100,14 @@ For this, we present three workflow models implementing Simon's algorithm, the B
 The corresponding workflow models can be found [here](2020-ucc).
 
 ## Learn More
+
+* Beisel, Martin; Barzen, Johanna; Bechtold, Marvin; Leymann, Frank; Truger, Felix; Weder, Benjamin:
+  **Metamodel and Formalization to Model, Transform, Deploy, and Execute Quantum Workflows**.
+  In: Cloud Computing and Services Science, Springer, 2024
+
+* Beisel, Martin; Gemeinhardt, Felix; Salm, Marie; Weder, Benjamin:
+  [**A Practical Introduction for Developing and Operating Hybrid Quantum Applications**](https://link.springer.com/chapter/10.1007/978-3-031-34444-2_36).
+  In: Proceedings of the 23rd International Conference on Web Engineering (ICWE 2023), Springer, 2023 
 
 * Beisel, Martin; Barzen, Johanna; Bechtold, Marvin; Leymann, Frank; Truger, Felix; Weder, Benjamin:
   [**QuantME4VQA: Modeling and Executing Variational Quantum Algorithms using Workflows**](https://www.iaas.uni-stuttgart.de/publications/Beisel2023_QuantME4VQA.pdf).
