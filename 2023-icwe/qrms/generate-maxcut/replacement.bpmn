@@ -16,6 +16,32 @@
             <camunda:inputParameter name="payload">
               <camunda:script scriptFormat="groovy">
 			    import groovy.json.JsonBuilder
+  def matrix = execution.getVariable("adjMatrix");
+
+if (matrix instanceof String) {
+    println("Received matrix of type string: " + matrix);
+    matrix = matrix.drop(1).take(matrix.length()-2);
+    matrix= matrix.replaceAll("\\s","").split("\\],\\[");
+    println("Separated matrix: " + matrix.toString());
+
+    new_matrix = []
+    for (el in matrix){
+        def current_array = el.replaceAll("\\[","").replaceAll("\\]","")
+        println("Current array: " + current_array.toString());
+        new_arr = [];
+        def numbers = current_array.split(",");
+        println("Numbers: " + numbers.toString());
+
+        for (number in numbers){
+            new_arr.push(number.toDouble());
+        }
+        new_matrix.push(new_arr);
+    }
+
+    matrix = new_matrix;
+    println("Matrix after parsing: " + matrix.toString());
+    execution.setVariable("adjMatrix", matrix);
+}
   def adjMatrix = execution.getVariable("adjMatrix");
 
   def request = [:];
