@@ -1,0 +1,70 @@
+version: '1'
+
+volumes:
+  exec_data:
+
+services:
+  ### Workflow Modeler ###
+  workflow-modeler:
+    image: planqk/workflow-modeler:v1.2.0
+    environment:
+     CAMUNDA_ENDPOINT: http://${PUBLIC_HOSTNAME}:8090/engine-rest
+     ENABLE_DATA_FLOW_PLUGIN: 'false'
+     ENABLE_OPENTOSCA_PLUGIN: 'true'
+     ENABLE_PLANQK_PLUGIN: 'false'
+     ENABLE_QHANA_PLUGIN: 'false'
+     ENABLE_QUANTME_PLUGIN: 'true'
+     NISQ_ANALYZER_ENDPOINT: http://${PUBLIC_HOSTNAME}:8098
+     OPENTOSCA_ENDPOINT: http://${PUBLIC_HOSTNAME}:1337/csars
+     QPROV_ENDPOINT: http://${PUBLIC_HOSTNAME}:8094/qprov
+     QRM_USERNAME: ${QRM_USERNAME}
+     QRM_REPONAME: ${QRM_REPONAME}
+     QRM_REPOPATH: ${QRM_REPOPATH}
+     TRANSFORMATION_FRAMEWORK_ENDPOINT: http://${PUBLIC_HOSTNAME}:8888
+     WINERY_ENDPOINT: http://${PUBLIC_HOSTNAME}:8093/winery
+    ports:
+      - 8080:8080
+    networks:
+      - workflow-observability
+
+  ### Camunda Engine ###
+  camunda-engine:
+    image: planqk/camunda-process-views-plugin:v1.0.0
+    ports:
+      - 8090:8080
+    networks:
+      - workflow-observability
+
+  ### Quokka Services ###
+  #######################
+  execution-service:
+    image: planqk/execution-service:main
+    ports:
+      - '5075:5075'
+    networks:
+      - workflow-observability
+
+  objective-evaluation-service:
+    image: planqk/objective-evaluation-service:local
+    ports:
+      - '5072:5072'
+    networks:
+      - workflow-observability
+
+  circuit-generation-service:
+    image: planqk/quantum-circuit-generator:local
+    ports:
+      - '5073:5073'
+    networks:
+      - workflow-observability
+
+  quokka-gateway:
+    image: planqk/quokka-gateway:0.2.0
+    ports:
+      - '6474:6474'
+    networks:
+      - workflow-observability
+
+networks:
+  workflow-observability:
+    driver: bridge
