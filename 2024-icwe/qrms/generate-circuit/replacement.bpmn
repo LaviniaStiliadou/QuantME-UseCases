@@ -25,7 +25,7 @@ def n = execution.getVariable("n");
   request.put("g", g);
   request.put("p", p);
   request.put("b", b);
-request.put("n", b);
+request.put("n", n);
  
   requeststring = new JsonBuilder(request).toPrettyString()
   return requeststring;
