@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn2:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" id="sample-diagram" targetNamespace="http://bpmn.io/schema/bpmn" xsi:schemaLocation="http://www.omg.org/spec/BPMN/20100524/MODEL BPMN20.xsd">
-  <bpmn2:process id="Process_1" isExecutable="false">
-    <bpmn2:serviceTask id="Activity_16z2x7p" name="Evaluate m" camunda:asyncAfter="true" camunda:exclusive="false">
+  <bpmn2:process id="Process_1" isExecutable="true">
+    <bpmn2:serviceTask id="Activity_04egb7z" name="Evaluate m" camunda:asyncAfter="true" camunda:exclusive="false">
       <bpmn2:extensionElements>
         <camunda:connector>
           <camunda:inputOutput>
@@ -41,26 +41,12 @@ objValue= resp.get('objective_value')
 println("obj values:" + objValue.toString());
 return objValue.toDouble();</camunda:script>
             </camunda:outputParameter>
-            <camunda:outputParameter name="evaluatedCosts">
-              <camunda:script scriptFormat="Groovy">def resp = connector.getVariable("response");
-resp = new groovy.json.JsonSlurperClassic().parseText(resp)
-costs= resp.get('costs')
-println(costs);
-return costs;</camunda:script>
-            </camunda:outputParameter>
-            <camunda:outputParameter name="maxCutPlot">
-              <camunda:script scriptFormat="Groovy">import org.camunda.bpm.engine.variable.value.FileValue
-								import org.camunda.bpm.engine.variable.Variables
-                import groovy.json.JsonSlurper
-                def slurper = new JsonSlurper().parseText(response)
-								String filename = "plot.png";
-								FileValue typedFileValue = Variables.fileValue(filename).file(slurper.visualization.decodeBase64()).mimeType("application/png").create()
-typedFileValue</camunda:script>
-            </camunda:outputParameter>
           </camunda:inputOutput>
           <camunda:connectorId>http-connector</camunda:connectorId>
         </camunda:connector>
         <camunda:inputOutput>
+          <camunda:inputParameter name="objectiveFunction">expectationValue</camunda:inputParameter>
+          <camunda:inputParameter name="costFunction">shor</camunda:inputParameter>
           <camunda:inputParameter name="objectiveFunction">expectationValue</camunda:inputParameter>
           <camunda:inputParameter name="costFunction">shor</camunda:inputParameter>
         </camunda:inputOutput>
@@ -69,8 +55,8 @@ typedFileValue</camunda:script>
   </bpmn2:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_1">
     <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">
-      <bpmndi:BPMNShape id="Activity_0i75abh_di" bpmnElement="Activity_16z2x7p">
-        <dc:Bounds x="0" y="0" width="100" height="80" />
+      <bpmndi:BPMNShape id="Activity_0qjyo1f_di" bpmnElement="Activity_04egb7z">
+        <dc:Bounds x="386" y="0" width="100" height="80" />
         <bpmndi:BPMNLabel />
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
